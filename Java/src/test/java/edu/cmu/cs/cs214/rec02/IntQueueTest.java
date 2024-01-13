@@ -107,7 +107,7 @@ public class IntQueueTest {
         assertTrue(mQueue.isEmpty());
         // one value added in Queue, so size is 1
         mQueue.enqueue(2);
-        assertTrue(mQueue.isEmpty());
+        assertFalse(mQueue.isEmpty());
         mQueue.dequeue();
         assertTrue(mQueue.isEmpty());
     }
