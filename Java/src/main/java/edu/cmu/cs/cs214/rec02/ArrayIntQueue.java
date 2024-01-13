@@ -96,16 +96,18 @@ public class ArrayIntQueue implements IntQueue {
     private void ensureCapacity() {
         // current code might get in the ArrayIndexOutOfBounds in second loop here
         if (size == elementData.length) {
-            int oldCapacity = elementData.length;
-            int newCapacity = 2 * oldCapacity + 1;
+            int newCapacity = elementData.length * 2;
             int[] newData = new int[newCapacity];
-            for (int i = head; i < oldCapacity; i++) {
-                newData[i - head] = elementData[i];
+    
+            // Copy elements from the old array to the new array.
+            // The order of elements in the queue must be maintained.
+            for (int i = 0; i < size; i++) {
+                newData[i] = elementData[(head + i) % elementData.length];
             }
-            for (int i = 0; i < head; i++) {
-                newData[head - i] = elementData[i];
-            }
+    
+            // Update the queue to use the new array.
             elementData = newData;
+            // Reset head because the first element of the queue is now at index 0 in the new array.
             head = 0;
         }
     }
