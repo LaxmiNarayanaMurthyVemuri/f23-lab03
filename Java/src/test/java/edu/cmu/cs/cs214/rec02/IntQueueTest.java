@@ -116,7 +116,7 @@ public class IntQueueTest {
     public void testCheckPeek() {
         mQueue = new LinkedIntQueue();
         mQueue.clear();
-        assertEquals(mQueue.peek(), null);
+        assertEquals(mQueue.peek(), null); // fixed code and test cases passed
     }
 
 
