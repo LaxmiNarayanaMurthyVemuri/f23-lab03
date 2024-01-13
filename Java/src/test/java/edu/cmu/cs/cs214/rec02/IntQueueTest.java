@@ -123,6 +123,11 @@ public class IntQueueTest {
     public void checkEnsureCapacity() {
         testList = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13));
         mQueue = new ArrayIntQueue();
+        assertTrue(mQueue.isEmpty());
+        mQueue.dequeue();
+        assertTrue(mQueue.isEmpty());
+        mQueue.clear();
+        assertTrue(mQueue.isEmpty());
         for (Integer integer : testList) {
             mQueue.enqueue(integer);
         }
