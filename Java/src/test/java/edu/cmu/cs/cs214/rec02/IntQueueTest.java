@@ -100,5 +100,17 @@ public class IntQueueTest {
         }
     }
 
+    @Test
+    public void testCheckIsEmpty() {
+        mQueue = new LinkedIntQueue();
+        // Empty Queue
+        assertTrue(mQueue.isEmpty());
+        // one value added in Queue, so size is 1
+        mQueue.enqueue(2);
+        assertTrue(mQueue.isEmpty());
+        mQueue.dequeue();
+        assertTrue(mQueue.isEmpty());
+    }
+
 
 }
