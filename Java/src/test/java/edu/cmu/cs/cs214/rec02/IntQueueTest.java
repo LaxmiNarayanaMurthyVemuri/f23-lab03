@@ -112,5 +112,12 @@ public class IntQueueTest {
         assertTrue(mQueue.isEmpty());
     }
 
+    @Test
+    public void testCheckPeek() {
+        mQueue = new LinkedIntQueue();
+        mQueue.clear();
+        assertEquals(mQueue.peek(), null);
+    }
+
 
 }
