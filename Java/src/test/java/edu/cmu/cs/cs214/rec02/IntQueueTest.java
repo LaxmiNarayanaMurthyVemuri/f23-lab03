@@ -33,8 +33,8 @@ public class IntQueueTest {
     @Before
     public void setUp() {
         // comment/uncomment these lines to test each class
-        mQueue = new LinkedIntQueue();
-//        mQueue = new ArrayIntQueue();
+        // mQueue = new LinkedIntQueue();
+       mQueue = new ArrayIntQueue();
 
         testList = new ArrayList<>(List.of(1, 2, 3));
     }
@@ -119,5 +119,20 @@ public class IntQueueTest {
         assertEquals(mQueue.peek(), null); // fixed code and test cases passed
     }
 
+    @Test
+    public void checkEnsureCapacity() {
+        testList = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13));
+        mQueue = new ArrayIntQueue();
+        for (Integer integer : testList) {
+            mQueue.enqueue(integer);
+        }
+        
+        for (Integer result : testList) {
+            Integer a = mQueue.dequeue();
+            System.out.println(a + " " + mQueue);
+            assertEquals(a, result);
+        }
+
+    }
 
 }

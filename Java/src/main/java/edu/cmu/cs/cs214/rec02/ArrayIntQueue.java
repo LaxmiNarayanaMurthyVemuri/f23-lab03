@@ -94,6 +94,7 @@ public class ArrayIntQueue implements IntQueue {
      * necessary, to ensure that it can hold at least size + 1 elements.
      */
     private void ensureCapacity() {
+        // current code might get in the ArrayIndexOutOfBounds in second loop here
         if (size == elementData.length) {
             int oldCapacity = elementData.length;
             int newCapacity = 2 * oldCapacity + 1;
@@ -108,4 +109,9 @@ public class ArrayIntQueue implements IntQueue {
             head = 0;
         }
     }
+
+    public String toString() {
+        return Arrays.toString(elementData);
+    }
+
 }
