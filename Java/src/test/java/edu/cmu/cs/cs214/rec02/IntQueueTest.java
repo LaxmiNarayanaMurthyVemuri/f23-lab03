@@ -126,7 +126,7 @@ public class IntQueueTest {
         for (Integer integer : testList) {
             mQueue.enqueue(integer);
         }
-        
+        // The below code check ensureCapacity() correctly
         for (Integer result : testList) {
             Integer a = mQueue.dequeue();
             System.out.println(a + " " + mQueue);
