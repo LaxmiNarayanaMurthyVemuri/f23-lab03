@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 
 /**
- * TODO: Write more unit tests to test the implementation of ArrayIntQueue
+ * Completed unit tests to test the implementation of ArrayIntQueue
  * for the {@link LinkedIntQueue} and
  * {@link ArrayIntQueue} classes, as described in the handout. The
  * {@link ArrayIntQueue} class contains a few bugs. Use the tests you wrote for

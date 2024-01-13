@@ -7,8 +7,6 @@ import java.util.Arrays;
  * the queue starts out at the head of the array, allowing the queue to grow and
  * shrink in constant time.
  *
- * TODO: This implementation contains three bugs! Use your tests to determine the
- * source of the bugs and correct them!
  *
  * @author Alex Lockwood
  * @author Ye Lu
