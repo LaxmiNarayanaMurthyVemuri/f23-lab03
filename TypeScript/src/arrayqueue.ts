@@ -56,15 +56,16 @@ function newArrayIntQueue (): IntQueue {
       const newCapacity = 2 * oldCapacity + 1
       const newData: number[] = new Array(newCapacity)
       newData.fill(0)
-      Object.seal(newData)
-      for (let i = head; i < oldCapacity; i++) {
-        newData[i - head] = elementData[i]
-      }
-      for (let i = 0; i < head; i++) {
-        newData[head - i] = elementData[i]
+      
+      // for (let i = head; i < oldCapacity; i++) {
+      //   newData[i - head] = elementData[i]
+      // }
+      for (let i = 0; i < size; i++) {
+        newData[i] = elementData[(head + i) % elementData.length];
       }
       elementData = newData
       head = 0
+      Object.seal(newData)
     }
   }
 
@@ -94,16 +95,20 @@ function newArrayIntQueue (): IntQueue {
     },
 
     isEmpty: function (): boolean {
-      return size >= 0
+      return size == 0
     },
 
     peek: function (): number | null {
+      if (this.isEmpty()) {
+        return null
+      }
       return elementData[head]
     },
 
     size: function (): number {
       return size
     }
+    
 
   }
 }
